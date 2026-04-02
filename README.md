@@ -25,7 +25,7 @@ Linting: ruff
 CI: GitHub Actions
 📦 Instalação
 # Clone o repositório
-git clone https://github.com/seu-usuario/noteorg.git
+git clone [https://github.com/seu-usuario/noteorg.git](https://github.com/sophia473/noteorg.git)
 cd noteorg
 
 # (Opcional) Crie um ambiente virtual
@@ -60,7 +60,7 @@ noteorg/
 1.0.0 — veja pyproject.toml
 
 👤 Autor
-Seu Nome — GitHub
+Sophia Silva Melo — GitHub
 
 🔗 Repositório
-https://github.com/seu-usuario/noteorg
+[https://github.com/seu-usuario/noteorg](https://github.com/sophia473/noteorg.git)
