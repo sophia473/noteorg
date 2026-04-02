@@ -83,7 +83,7 @@ def exibir_nota(nota: dict) -> None:
 
 def menu():
     print("\n╔══════════════════════════════╗")
-    print("║       NoteOrg v1.0.0        ║")
+    print("║        NoteOrg v1.0.0        ║")
     print("╠══════════════════════════════╣")
     print("║  1. Adicionar resumo         ║")
     print("║  2. Listar todos os resumos  ║")
@@ -141,7 +141,8 @@ def main():
 
         elif opcao == "5":
             try:
-                nota_id = int(input("ID do resumo a remover: ").strip())
+                id_txt = input("ID do resumo a remover: ").strip()
+                nota_id = int(id_txt)
                 if remover_nota(nota_id):
                     print(f"\n✅ Resumo {nota_id} removido!")
                 else:
