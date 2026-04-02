@@ -3,15 +3,20 @@ Testes automatizados para NoteOrg.
 Cobre: caminho feliz, entrada inválida e casos limite.
 """
 
-import json
 import os
 import sys
 import pytest
 
-# Garante que o módulo src seja encontrado
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
+# Tenta encontrar o arquivo noteorg.py na raiz do projeto
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+# Caso o arquivo esteja na mesma pasta dos testes, esta linha garante a leitura:
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__)))
 
-import noteorg
+try:
+    import noteorg
+except ImportError:
+    # Se falhar, tenta importar o módulo direto (caso esteja em pacotes)
+    from . import noteorg
 
 
 # ── Fixtures ──────────────────────────────────────────────────────────────────
@@ -20,8 +25,9 @@ import noteorg
 def arquivo_temporario(tmp_path, monkeypatch):
     """Redireciona DATA_FILE para um arquivo temporário isolado por teste."""
     data_dir = tmp_path / "data"
-    data_dir.mkdir()
+    data_dir.mkdir(parents=True, exist_ok=True)
     fake_path = str(data_dir / "notas.json")
+    # Garante que o noteorg use o caminho falso para não sujar seu arquivo real
     monkeypatch.setattr(noteorg, "DATA_FILE", fake_path)
     yield fake_path
 
