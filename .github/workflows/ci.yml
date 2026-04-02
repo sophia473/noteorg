@@ -25,7 +25,7 @@ jobs:
           pip install pytest ruff
 
       - name: Executar linting (ruff)
-        run: ruff check src/ tests/
+        run: ruff check .
 
       - name: Executar testes automatizados
-        run: pytest tests/ -v
+        run: pytest . -v
