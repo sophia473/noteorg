@@ -1,2 +1,0 @@
-# noteorg
-Projeto NoteOrg
