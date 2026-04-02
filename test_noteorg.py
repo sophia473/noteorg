@@ -5,6 +5,7 @@ Cobre: caminho feliz, entrada inválida e casos limite.
 
 import os
 import sys
+
 import pytest
 
 # Tenta encontrar o arquivo noteorg.py na raiz do projeto
